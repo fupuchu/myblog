@@ -3,22 +3,13 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Randomizer from "../utils/Randomizer";
-import moment from "moment";
-
-function LangGreeter() {
-  let greetArr = ["Hello", "Ni Hao", "Guten", "Konnichiwa"];
-  const hour = moment().format("H");
-  const res = greetArr[Randomizer(greetArr.length)];
-
-  if (hour >= 0 && hour <= 11) {
-    return <span>{res}, I am Leon Ho Morning</span>;
-  } else if (hour >= 12 && hour < 17) {
-    return <span>{res}, I am Leon Ho Afternoon</span>;
-  } else {
-    return <span>{res}, I am Leon Ho Evening</span>;
-  }
-}
+import Greeter from "../components/greeter";
+import Image from "../components/image";
+// import Carousel from "../components/carousel";
+// import image from "../assets/splash.jpg";
+// import image1 from "../assets/image1.jpeg";
+// import image2 from "../assets/image2.jpeg";
+// import image3 from "../assets/image3.jpeg";
 
 const IndexPage = () => (
   <Layout>
@@ -26,15 +17,14 @@ const IndexPage = () => (
       title="Home"
       keywords={[`gatsby`, `application`, `react`, `portfolio`]}
     />
-    <h1>
-      <LangGreeter />
-    </h1>
+    <Greeter />
+
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nam quo
-      debitis consectetur alias. Esse, adipisci nihil, obcaecati earum
-      voluptatum dicta quo tenetur atque ducimus sed error totam voluptatibus
-      sequi?
+      An <em>aspiring full stack web developer</em> with a marketing and
+      customer service background aiming to create immersive and meaningful web
+      experiences for everyone.
     </p>
+    <Image />
   </Layout>
 );
 

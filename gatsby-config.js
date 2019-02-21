@@ -11,6 +11,10 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`
+      },
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets`
       }
     },
     `gatsby-transformer-sharp`,
@@ -27,7 +31,8 @@ module.exports = {
         icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
       }
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
