@@ -17,9 +17,13 @@ function randomColors() {
 }
 const GreetHeader = styled.h1`
   color: ${randomColors()};
+  text-align: center;
 `;
-const SubHeader = styled.small`
+const SubHeader = styled.p`
   color: ${randomColors()};
+  font-size: 22px;
+  margin-top: 0;
+  text-align: center;
 `;
 
 function LangGreeter() {
@@ -30,22 +34,24 @@ function LangGreeter() {
 
   if (hour >= 0 && hour <= 11) {
     return (
-      <GreetHeader>
-        {greetArrMorning[Randomizer(3)]}
+      <div>
+        <GreetHeader>{greetArrMorning[Randomizer(3)]}</GreetHeader>
         <SubHeader>I am Leon Ho</SubHeader>
-      </GreetHeader>
+      </div>
     );
   } else if (hour >= 12 && hour < 17) {
     return (
-      <GreetHeader>
-        {greetArrPM[Randomizer(3)]} <SubHeader>I am Leon Ho</SubHeader>
-      </GreetHeader>
+      <div>
+        <GreetHeader>{greetArrPM[Randomizer(3)]}</GreetHeader>
+        <SubHeader>I am Leon Ho</SubHeader>
+      </div>
     );
   } else {
     return (
-      <GreetHeader>
-        {greetArrEvening[Randomizer(3)]} <SubHeader>I am Leon Ho</SubHeader>
-      </GreetHeader>
+      <div>
+        <GreetHeader>{greetArrEvening[Randomizer(3)]}</GreetHeader>
+        <SubHeader>I am Leon Ho</SubHeader>
+      </div>
     );
   }
 }
