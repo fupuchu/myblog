@@ -1,21 +1,26 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Card from "../components/card";
+import styled from "styled-components";
+
+const BlogHeader = styled.h1`
+  text-align: center;
+`;
 
 const Blog = ({ data }) => (
   <Layout>
     <SEO title="Blog" keywords={[`gatsby`, `application`, `react`, `blog`]} />
-    <h1>My love/hate relationship with frontend development</h1>
+    <BlogHeader>My love/hate relationship with frontend development</BlogHeader>
     {data.allMarkdownRemark.edges.map(post => (
       <div key={post.node.id}>
         <Card
           headerText={post.node.frontmatter.title}
           bodyText={post.node.frontmatter.author}
+          blogLink={post.node.frontmatter.path}
         />
-        <Link to={post.node.frontmatter.path}>Read More</Link>
       </div>
     ))}
   </Layout>

@@ -12,7 +12,7 @@ import { FaTwitterSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 // Styled Components
 
 const Container = styled.div`
-  margin: 3rem auto;
+  margin: 1rem auto;
   max-width: 600px;
   display: flex;
   flex-direction: column;
@@ -25,6 +25,7 @@ const SocialIcons = styled.div`
 `;
 const Copyright = styled.p`
   text-align: center;
+  font-size: 14px;
 `;
 
 const Layout = ({ children }) => (
@@ -48,7 +49,7 @@ const Layout = ({ children }) => (
           <footer>
             {` `}
             <SocialIcons>
-              <IconContext.Provider value={{ color: "#1DA1F2", size: "3em" }}>
+              <IconContext.Provider value={{ color: "#1DA1F2", size: "1.5em" }}>
                 <div>
                   <a href="https://www.twitter.com/fupuchu " target="_blank ">
                     <FaTwitterSquare />
@@ -56,7 +57,7 @@ const Layout = ({ children }) => (
                 </div>
               </IconContext.Provider>
 
-              <IconContext.Provider value={{ color: "#333", size: "3em" }}>
+              <IconContext.Provider value={{ color: "#333", size: "1.5em" }}>
                 <div>
                   <a href="https://github.com/fupuchu " target="_blank ">
                     <FaGithubSquare />
@@ -64,7 +65,7 @@ const Layout = ({ children }) => (
                 </div>
               </IconContext.Provider>
 
-              <IconContext.Provider value={{ color: "#00a0dc", size: "3em" }}>
+              <IconContext.Provider value={{ color: "#00a0dc", size: "1.5em" }}>
                 <div>
                   <a
                     href="https://www.linkedin.com/in/iamleonho/ "
