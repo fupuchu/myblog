@@ -95,7 +95,7 @@ export const postQuery = graphql`
       }
       image {
         fluid {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
     }
