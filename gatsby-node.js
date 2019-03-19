@@ -7,18 +7,11 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark {
+      allContentfulPost {
         edges {
           node {
-            id
-            html
-            frontmatter {
-              path
-              title
-              date
-              author
-              time
-            }
+            slug
+            postTitle
           }
         }
       }
@@ -28,10 +21,15 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(res.errors);
     }
 
-    res.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const posts = res.data.allContentfulPost.edges;
+
+    posts.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
-        component: postTemplate
+        path: node.slug,
+        component: postTemplate,
+        context: {
+          slug: node.slug
+        }
       });
     });
   });

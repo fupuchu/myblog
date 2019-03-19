@@ -16,6 +16,9 @@ const Container = styled.div`
   max-width: 600px;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 850px) {
+    margin-top: 0;
+  }
 `;
 
 const SocialIcons = styled.div`

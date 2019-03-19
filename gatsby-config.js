@@ -1,3 +1,9 @@
+const dotenv = require("dotenv");
+
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
+
 module.exports = {
   siteMetadata: {
     title: `iamleonho.xyz`,
@@ -47,6 +53,14 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: "k2ts59r2fsjs",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    },
+    `@contentful/gatsby-transformer-contentful-richtext`
   ]
 };

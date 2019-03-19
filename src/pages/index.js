@@ -25,6 +25,7 @@ const IndexPage = () => (
       experiences for everyone.
     </p>
     <Image />
+    <h1>My adventures on Instagram</h1>
   </Layout>
 );
 

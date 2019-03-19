@@ -18,13 +18,16 @@ const Header = ({ siteTitle }) => (
   <header>
     <NavBar>
       <Link to="/" className="nav-bar-links">
-        {siteTitle}
+        Home
       </Link>
       <Link to="/blog" className="nav-bar-links">
         Blog
       </Link>
       <Link to="/portfolio" className="nav-bar-links">
         Portfolio
+      </Link>
+      <Link to="/about" className="nav-bar-links">
+        About
       </Link>
       <Link to="/page-2" className="nav-bar-links">
         Contact

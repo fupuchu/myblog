@@ -14,12 +14,12 @@ const Blog = ({ data }) => (
   <Layout>
     <SEO title="Blog" keywords={[`gatsby`, `application`, `react`, `blog`]} />
     <BlogHeader>My love/hate relationship with frontend development</BlogHeader>
-    {data.allMarkdownRemark.edges.map(post => (
+    {data.allContentfulPost.edges.map(post => (
       <div key={post.node.id}>
         <Card
-          headerText={post.node.frontmatter.title}
-          bodyText={post.node.frontmatter.author}
-          blogLink={post.node.frontmatter.path}
+          headerText={post.node.postTitle}
+          bodyText={post.node.author}
+          blogLink={post.node.slug}
         />
       </div>
     ))}
@@ -28,16 +28,25 @@ const Blog = ({ data }) => (
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allMarkdownRemark {
+    # allMarkdownRemark {
+    #   edges {
+    #     node {
+    #       id
+    #       frontmatter {
+    #         path
+    #         title
+    #         date
+    #         author
+    #       }
+    #     }
+    #   }
+    # }
+    allContentfulPost {
       edges {
         node {
-          id
-          frontmatter {
-            path
-            title
-            date
-            author
-          }
+          slug
+          author
+          postTitle
         }
       }
     }

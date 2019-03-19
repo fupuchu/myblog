@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@blueprintjs/core": "^3.13.0",
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.116",
     "gatsby-image": "^2.0.29",
@@ -17,7 +18,9 @@
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-plugin-typography": "^2.2.8",
+    "gatsby-source-contentful": "^2.0.40",
     "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-source-instagram": "^0.3.0",
     "gatsby-transformer-remark": "^2.3.0",
     "gatsby-transformer-sharp": "^2.1.13",
     "mini.css": "^3.0.1",
