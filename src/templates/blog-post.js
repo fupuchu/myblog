@@ -48,7 +48,7 @@ export default function Template({ data }) {
       <div>
         <BlogTitle>{post.postTitle}</BlogTitle>
         <BlogDetails>
-          Posted by {post.author} at {formattedDate}
+          Posted by {post.author} on {formattedDate}
         </BlogDetails>
         <div>
           <StyledLink to="/blog">Go Back</StyledLink>
