@@ -1,19 +1,60 @@
 import React from "react";
-// import { Link } from "gatsby";
+import styled from "styled-components";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Card from "../components/card";
+import CardPortfolio from "../components/card-portfolio";
 
-const Portfolio = () => (
-  <Layout>
-    <SEO
-      title="Portfolio"
-      keywords={[`gatsby`, `application`, `react`, `portfolio`]}
-    />
-    <h1>My love/hate relationship with frontend development</h1>
-    <Card headerText="This is the header text" bodyText="Lorem 😂😂 ipsum 🕵️‍♂️dolor sit✍️ amet, consectetur adipiscing😇😇🤙 elit, sed do eiusmod🥰 tempor 😤😤🏳️‍🌈incididunt ut 👏labore 👏et👏 dolore 👏magna👏 aliqua. Ut enim ad minim 🐵✊🏿veniam,❤️😤😫😩💦💦 quis nostrud 👿🤮exercitation ullamco 🧠👮🏿‍♀️🅱️laboris nisi ut aliquip❗️ ex ea commodo consequat. 💯Duis aute💦😂😂😂 irure dolor 👳🏻‍♂️🗿in reprehenderit 🤖👻👎in voluptate velit esse cillum dolore 🙏🙏eu fugiat🤔 nulla pariatur. 🙅‍♀️🙅‍♀️Excepteur sint occaecat🤷‍♀️🤦‍♀️ cupidatat💅 non💃 proident,👨‍👧 sunt🤗 in culpa😥😰😨 qui officia🤩🤩 deserunt mollit 🧐anim id est laborum.🤔🤔" />
-  </Layout>
-);
+const PortfolioWrapper = styled.div`
+  display: block;
+`;
 
-export default Portfolio;
+export default function Portfolio({ data }) {
+  const portfolioData = data.allContentfulPortfolio.edges;
+  return (
+    <Layout>
+      <SEO
+        title="Portfolio"
+        keywords={[`gatsby`, `application`, `react`, `portfolio`]}
+      />
+      <h1>My love/hate relationship with frontend development</h1>
+      <PortfolioWrapper>
+        {portfolioData.map(n => (
+          <div key={n.node.id}>
+            <CardPortfolio
+              headerText={n.node.projectTitle}
+              imgSrc={n.node.projectImage.fluid}
+              techStack={n.node.techStack}
+              bodyText={n.node.portfolioWriteUp.childContentfulRichText.html}
+            />
+          </div>
+        ))}
+      </PortfolioWrapper>
+    </Layout>
+  );
+}
+
+export const portfolioQuery = graphql`
+  query portfolioItmes {
+    allContentfulPortfolio {
+      edges {
+        node {
+          techStack
+          projectTitle
+          portfolioWriteUp {
+            id
+            childContentfulRichText {
+              html
+            }
+          }
+          projectImage {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`;

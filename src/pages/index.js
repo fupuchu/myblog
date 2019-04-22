@@ -5,11 +5,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Greeter from "../components/greeter";
 import Image from "../components/image";
-// import Carousel from "../components/carousel";
-// import image from "../assets/splash.jpg";
-// import image1 from "../assets/image1.jpeg";
-// import image2 from "../assets/image2.jpeg";
-// import image3 from "../assets/image3.jpeg";
 
 const IndexPage = () => (
   <Layout>

@@ -28,19 +28,6 @@ const Blog = ({ data }) => (
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    # allMarkdownRemark {
-    #   edges {
-    #     node {
-    #       id
-    #       frontmatter {
-    #         path
-    #         title
-    #         date
-    #         author
-    #       }
-    #     }
-    #   }
-    # }
     allContentfulPost {
       edges {
         node {
