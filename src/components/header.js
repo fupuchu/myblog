@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
+import colors from "../styles/colors";
 
 const NavBar = styled.div`
   display: flex;
@@ -14,24 +15,51 @@ const NavBar = styled.div`
   background-color: rgba(199, 199, 199, 0.3);
 `;
 
+const LinkWithBorder = styled(Link)`
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(63, 63, 63);
+  margin: 5px;
+  line-height: 1.5em;
+  padding: 5px;
+  background-color: transparent;
+  transition: all 0.2s;
+  &::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 0;
+    height: 2px;
+    background-color: ${props => props.borderColor || "salmon"};
+    transition: width 0.2s;
+    padding: 1px 10px;
+    border-radius: 0 5px 5px 0;
+  }
+  &:hover::after {
+    transition: all 0.5s;
+    width: 100%;
+    border-radius: 0;
+  }
+`;
+
 const Header = ({ siteTitle }) => (
   <header>
     <NavBar>
-      <Link to="/" className="nav-bar-links">
+      <LinkWithBorder to="/" borderColor={colors.orange}>
         Home
-      </Link>
-      <Link to="/blog" className="nav-bar-links">
+      </LinkWithBorder>
+      <LinkWithBorder to="/blog" borderColor={colors.green}>
         Blog
-      </Link>
-      <Link to="/portfolio" className="nav-bar-links">
+      </LinkWithBorder>
+      <LinkWithBorder to="/portfolio" borderColor={colors.blue}>
         Portfolio
-      </Link>
-      <Link to="/about" className="nav-bar-links">
+      </LinkWithBorder>
+      <LinkWithBorder to="/about" borderColor={colors.red}>
         About
-      </Link>
-      <Link to="/page-2" className="nav-bar-links">
+      </LinkWithBorder>
+      <LinkWithBorder to="/page-2" borderColor={colors.darkgreen}>
         Contact
-      </Link>
+      </LinkWithBorder>
     </NavBar>
   </header>
 );

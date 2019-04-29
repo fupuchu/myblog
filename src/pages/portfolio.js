@@ -18,7 +18,7 @@ export default function Portfolio({ data }) {
         title="Portfolio"
         keywords={[`gatsby`, `application`, `react`, `portfolio`]}
       />
-      <h1>My love/hate relationship with frontend development</h1>
+      <h1>Portfolio</h1>
       <PortfolioWrapper>
         {portfolioData.map(n => (
           <div key={n.node.id}>

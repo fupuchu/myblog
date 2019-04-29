@@ -17,15 +17,24 @@ function randomColors() {
 }
 const GreetHeader = styled.h1`
   color: ${randomColors()};
+  font-size: 38px;
   text-align: center;
 `;
 const SubHeader = styled.p`
   color: ${randomColors()};
-  font-size: 22px;
+  font-size: 24px;
   margin-top: 0;
+  font-weight: 500;
   text-align: center;
 `;
 
+function GreetName() {
+  return (
+    <div>
+      <SubHeader>I am Leon Ho</SubHeader>
+    </div>
+  );
+}
 function LangGreeter() {
   let greetArrMorning = ["Good Morning", `おはようございます`, `早安`];
   let greetArrPM = [`下午好`, `Good Afternoon`, `こんにちは`];
@@ -36,21 +45,21 @@ function LangGreeter() {
     return (
       <div>
         <GreetHeader>{greetArrMorning[Randomizer(3)]}</GreetHeader>
-        <SubHeader>I am Leon Ho</SubHeader>
+        <GreetName />
       </div>
     );
   } else if (hour >= 12 && hour < 17) {
     return (
       <div>
         <GreetHeader>{greetArrPM[Randomizer(3)]}</GreetHeader>
-        <SubHeader>I am Leon Ho</SubHeader>
+        <GreetName />
       </div>
     );
   } else {
     return (
       <div>
         <GreetHeader>{greetArrEvening[Randomizer(3)]}</GreetHeader>
-        <SubHeader>I am Leon Ho</SubHeader>
+        <GreetName />
       </div>
     );
   }
