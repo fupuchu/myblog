@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 const SecondPage = () => (
   <Layout>
     <SEO title="Blueprint.js Examples" />
+
     <div className="btn">Button</div>
     <div className="btn">Button</div>
     <div className="success-btn">Button</div>

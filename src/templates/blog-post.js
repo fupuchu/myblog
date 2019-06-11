@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { IconContext } from "react-icons";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaAngleLeft } from "react-icons/fa";
 import Img from "gatsby-image";
 import moment from "moment";
 
@@ -61,7 +61,7 @@ export default function Template({ data }) {
         />
         <IconContext.Provider value={{ color: "#00a0dc", size: "1.5em" }}>
           <div>
-            <FaArrowLeft />
+            <FaAngleLeft />
             <StyledLink to="/blog">Go Back</StyledLink>
           </div>
         </IconContext.Provider>

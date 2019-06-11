@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Greeter from "../components/greeter";
+// import Greeter from "../components/greeter";
 import FrontPageIntro from "../components/frontPageIntro";
 
 const IndexPage = () => (
@@ -11,7 +11,6 @@ const IndexPage = () => (
       title="Home"
       keywords={[`gatsby`, `application`, `react`, `portfolio`]}
     />
-    <Greeter />
     <FrontPageIntro />
   </Layout>
 );
