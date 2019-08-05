@@ -9,6 +9,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
 import Randomizer from "../utils/Randomizer";
+import InnerWrapper from "../components/innerwrapper";
 
 function randomColors() {
   const colorArr = [
@@ -45,7 +46,7 @@ export default function Template({ data }) {
         title={post.postTitle}
         keywords={[`gatsby`, `application`, `react`]}
       />
-      <div>
+      <InnerWrapper>
         <BlogTitle>{post.postTitle}</BlogTitle>
         <BlogDetails>
           Posted by {post.author} on {formattedDate}
@@ -65,7 +66,7 @@ export default function Template({ data }) {
             <StyledLink to="/blog">Go Back</StyledLink>
           </div>
         </IconContext.Provider>
-      </div>
+      </InnerWrapper>
     </Layout>
   );
 }
@@ -86,7 +87,7 @@ export const postQuery = graphql`
       }
       image {
         fluid {
-          ...GatsbyContentfulFluid_tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
     }
