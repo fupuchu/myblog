@@ -5,6 +5,8 @@ html {
 }
 body {
   margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 article,
 aside,

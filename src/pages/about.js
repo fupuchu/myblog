@@ -1,7 +1,15 @@
 import React from "react";
-
+import styled from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
+const AboutHeader = styled.h1`
+  text-align: center;
+  padding: 30px 0 0 0;
+  @media screen and (max-width: 600px) {
+    padding: 30px 5px;
+  }
+`;
 
 const About = () => (
   <Layout>
@@ -9,7 +17,7 @@ const About = () => (
       title="About Me"
       keywords={[`gatsby`, `application`, `react`, `portfolio`]}
     />
-    <h1>About me</h1>
+    <AboutHeader>About me</AboutHeader>
   </Layout>
 );
 

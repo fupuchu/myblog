@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Header from "./header";
+import colors from "../styles/colors";
 
 //Icons
 import { IconContext } from "react-icons";
@@ -21,6 +22,14 @@ const SocialIcons = styled.div`
 const Copyright = styled.p`
   text-align: center;
   font-size: 14px;
+`;
+
+const FixedFooter = styled.footer`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: ${colors.$apple_grey_medium};
 `;
 
 const Layout = ({ children }) => (
@@ -41,7 +50,7 @@ const Layout = ({ children }) => (
           <main>
             <Container>{children}</Container>
           </main>
-          <footer>
+          <FixedFooter>
             {` `}
             <SocialIcons>
               <IconContext.Provider value={{ color: "#1DA1F2", size: "1.5em" }}>
@@ -72,7 +81,7 @@ const Layout = ({ children }) => (
               </IconContext.Provider>
             </SocialIcons>
             <Copyright>© {new Date().getFullYear()} fupuchu</Copyright>
-          </footer>
+          </FixedFooter>
         </div>
       </>
     )}

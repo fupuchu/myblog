@@ -57,7 +57,7 @@ const Header = ({ siteTitle }) => (
       <LinkWithBorder to="/about" borderColor={colors.red}>
         About
       </LinkWithBorder>
-      <LinkWithBorder to="/page-2" borderColor={colors.darkgreen}>
+      <LinkWithBorder to="/contact" borderColor={colors.darkgreen}>
         Contact
       </LinkWithBorder>
     </NavBar>
