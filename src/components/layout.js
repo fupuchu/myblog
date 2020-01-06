@@ -4,11 +4,16 @@ import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Header from "./header";
-import colors from "../styles/colors";
+// import colors from "../styles/colors";
 
 //Icons
 import { IconContext } from "react-icons";
-import { FaTwitterSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import {
+  FaTwitterSquare,
+  FaGithubSquare,
+  FaLinkedin,
+  FaTwitch
+} from "react-icons/fa";
 
 // Styled Components
 
@@ -29,7 +34,7 @@ const FixedFooter = styled.footer`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: ${colors.$apple_grey_medium};
+  background-color: transparent;
 `;
 
 const Layout = ({ children }) => (
@@ -53,7 +58,7 @@ const Layout = ({ children }) => (
           <FixedFooter>
             {` `}
             <SocialIcons>
-              <IconContext.Provider value={{ color: "#1DA1F2", size: "1.5em" }}>
+              <IconContext.Provider value={{ color: "#1DA1F2", size: "2em" }}>
                 <div>
                   <a href="https://www.twitter.com/fupuchu " target="_blank ">
                     <FaTwitterSquare />
@@ -61,7 +66,7 @@ const Layout = ({ children }) => (
                 </div>
               </IconContext.Provider>
 
-              <IconContext.Provider value={{ color: "#333", size: "1.5em" }}>
+              <IconContext.Provider value={{ color: "#333", size: "2em" }}>
                 <div>
                   <a href="https://github.com/fupuchu " target="_blank ">
                     <FaGithubSquare />
@@ -69,13 +74,21 @@ const Layout = ({ children }) => (
                 </div>
               </IconContext.Provider>
 
-              <IconContext.Provider value={{ color: "#00a0dc", size: "1.5em" }}>
+              <IconContext.Provider value={{ color: "#00a0dc", size: "2em" }}>
                 <div>
                   <a
                     href="https://www.linkedin.com/in/iamleonho/ "
                     target="_blank "
                   >
                     <FaLinkedin />
+                  </a>
+                </div>
+              </IconContext.Provider>
+
+              <IconContext.Provider value={{ color: "#6441a5", size: "2em" }}>
+                <div>
+                  <a href="https://twitch.tv/fupuchu" target="_blank ">
+                    <FaTwitch />
                   </a>
                 </div>
               </IconContext.Provider>

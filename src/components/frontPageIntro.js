@@ -17,7 +17,7 @@ const HighLightText = styled.span`
 
 const FrontPageWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
-  height: calc(100vh - 120px);
+  height: calc(100vh - 160px);
   padding: 20px;
   display: flex;
   flex-direction: column;

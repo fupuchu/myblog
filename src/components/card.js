@@ -11,11 +11,17 @@ const CardWrapper = styled.div`
 `;
 
 const CardHeader = styled.h2`
-  color: ${Colors.orange};
+  color: #000;
 `;
 
 const CardBody = styled.p`
-  color: ${Colors.blue};
+  color: #000;
+  float: right;
+`;
+
+const CardDate = styled.p`
+  color: ${Colors.red};
+  margin-bottom: 0;
 `;
 
 const Card = props => {
@@ -24,6 +30,7 @@ const Card = props => {
       <CardHeader>{props.headerText}</CardHeader>
       <CardBody>{props.bodyText}</CardBody>
       <Link to={props.blogLink}>Read More</Link>
+      <CardDate>{props.postDate}</CardDate>
     </CardWrapper>
   );
 };

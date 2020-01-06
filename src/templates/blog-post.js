@@ -39,7 +39,9 @@ const StyledLink = styled(Link)`
 
 export default function Template({ data }) {
   const post = data.contentfulPost;
-  const formattedDate = moment(data.createAt).format("MMMM Do YYYY, h:mm a");
+  const formattedDate = moment(data.contentfulPost.createdAt).format(
+    "MMMM Do YYYY, h:mm a"
+  );
   return (
     <Layout>
       <SEO

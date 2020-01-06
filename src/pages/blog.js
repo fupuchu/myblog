@@ -6,6 +6,7 @@ import SEO from "../components/seo";
 import Card from "../components/card";
 import InnerWrapper from "../components/innerwrapper";
 import styled from "styled-components";
+import moment from "moment";
 
 const BlogHeader = styled.h1`
   text-align: center;
@@ -26,6 +27,9 @@ const Blog = ({ data }) => (
             headerText={post.node.postTitle}
             bodyText={post.node.author}
             blogLink={post.node.slug}
+            postDate={moment(post.node.createdAt).format(
+              "MMMM Do YYYY, h:mm a"
+            )}
           />
         </div>
       ))}
@@ -35,9 +39,10 @@ const Blog = ({ data }) => (
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allContentfulPost {
+    allContentfulPost(sort: { order: DESC, fields: createdAt }) {
       edges {
         node {
+          createdAt
           slug
           author
           postTitle
